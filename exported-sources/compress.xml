@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<RBProject version="5.5.3">
+<block type="Window" ID="-1181059733">
+ <ObjName>Window1</ObjName>
+ <ObjContainerID>0</ObjContainerID>
+ <EditBounds><Rect left="24" top="44" width="1000" height="637"/></EditBounds>
+ <EditSplit>181</EditSplit>
+ <BrowserPositionGroup>
+  <BrowserPositionElement>
+   <ScreenKey>100001616</ScreenKey>
+   <EditBounds><Rect left="24" top="44" width="1000" height="637"/></EditBounds>
+   <EditSplit>181</EditSplit>
+  </BrowserPositionElement>
+  <BrowserPositionElement>
+   <ScreenKey>100000721</ScreenKey>
+   <EditBounds><Rect left="24" top="44" width="1000" height="637"/></EditBounds>
+   <EditSplit>181</EditSplit>
+  </BrowserPositionElement>
+ </BrowserPositionGroup>
+ <LastPositionH>118</LastPositionH>
+ <LastPositionV>128</LastPositionV>
+ <PropertyVal Name="Name">Window1</PropertyVal>
+ <PropertyVal Name="Frame">0</PropertyVal>
+ <PropertyVal Name="Composite">False</PropertyVal>
+ <PropertyVal Name="HasBackColor">False</PropertyVal>
+ <PropertyVal Name="BackColor">16777215</PropertyVal>
+ <PropertyVal Name="Backdrop">0</PropertyVal>
+ <PropertyVal Name="Title">Untitled</PropertyVal>
+ <PropertyVal Name="Visible">True</PropertyVal>
+ <PropertyVal Name="FullScreen">False</PropertyVal>
+ <PropertyVal Name="MenuBarVisible">True</PropertyVal>
+ <PropertyVal Name="CloseBox">True</PropertyVal>
+ <PropertyVal Name="GrowIcon">False</PropertyVal>
+ <PropertyVal Name="LiveResize">False</PropertyVal>
+ <PropertyVal Name="ZoomIcon">False</PropertyVal>
+ <PropertyVal Name="BalloonHelp"></PropertyVal>
+ <PropertyVal Name="MacProcID">0</PropertyVal>
+ <PropertyVal Name="MenuBar">-1181059734</PropertyVal>
+ <PropertyVal Name="Placement">0</PropertyVal>
+ <PropertyVal Name="Width">173</PropertyVal>
+ <PropertyVal Name="Height">94</PropertyVal>
+ <PropertyVal Name="MinWidth">64</PropertyVal>
+ <PropertyVal Name="MinHeight">64</PropertyVal>
+ <PropertyVal Name="MaxWidth">32000</PropertyVal>
+ <PropertyVal Name="MaxHeight">32000</PropertyVal>
+ <FormDefn>
+  <ObjName>Window1</ObjName>
+  <ObjSize>120</ObjSize>
+  <Superclass>Window</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Activate</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Activate()</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </FormDefn>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>120</ObjSize>
+  <Superclass>PushButton</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Action</ItemName>
+   <ItemSource>
+    <StartSelRow>9</StartSelRow>
+    <StartSelCol>38</StartSelCol>
+    <EndSelRow>9</EndSelRow>
+    <EndSelCol>38</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Action()</SourceLine>
+    <SourceLine>dim original,compressed as folderItem</SourceLine>
+    <SourceLine>dim readfromfile,writetofile as binaryStream</SourceLine>
+    <SourceLine>#if targetcarbon then</SourceLine>
+    <SourceLine>dim readresource as resstream</SourceLine>
+    <SourceLine>#endif</SourceLine>
+    <SourceLine>dim parametros,data as string</SourceLine>
+    <SourceLine>dim i as integer</SourceLine>
+    <SourceLine>dim valor,filetotal,position,controle as double</SourceLine>
+    <SourceLine>original=getopenFolderItem("allfiles")</SourceLine>
+    <SourceLine>if original&lt;&gt;nil then</SourceLine>
+    <SourceLine>filetotal=original.length+original.resourceForkLength</SourceLine>
+    <SourceLine>readfromfile=original.openasbinaryFile(false)</SourceLine>
+    <SourceLine>#if targetcarbon then</SourceLine>
+    <SourceLine>readresource=original.openasResStream(false)</SourceLine>
+    <SourceLine>#endif</SourceLine>
+    <SourceLine>compressed=getfolderitem(original.name+".oct")</SourceLine>
+    <SourceLine>writetofile=compressed.createbinaryFile("allfiles")</SourceLine>
+    <SourceLine>#if targetcarbon then</SourceLine>
+    <SourceLine>parametros=original.name+chr(9)+"maccreator="+original.maccreator+chr(9)+"mactype="+original.mactype+chr(9)+"mac"</SourceLine>
+    <SourceLine>#endif</SourceLine>
+    <SourceLine>#if targetwin32 then</SourceLine>
+    <SourceLine>parametros=original.name+chr(9)+"pc"</SourceLine>
+    <SourceLine>#endif</SourceLine>
+    <SourceLine>i=lenb(parametros)</SourceLine>
+    <SourceLine>writetofile.write format(i,"0000")</SourceLine>
+    <SourceLine>writetofile.write parametros</SourceLine>
+    <SourceLine>#if targetcarbon then</SourceLine>
+    <SourceLine>writetofile.write format(original.getFileFlags,"00000000")</SourceLine>
+    <SourceLine>data=readresource.read(readresource.Length)</SourceLine>
+    <SourceLine>data=compress(data,9)</SourceLine>
+    <SourceLine>writetofile.write format(lenb(data),"00000000")</SourceLine>
+    <SourceLine>writetofile.write data</SourceLine>
+    <SourceLine>readresource.close</SourceLine>
+    <SourceLine>#endif</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>while not readfromfile.eof</SourceLine>
+    <SourceLine>data=compress(readfromfile.read(1048576),9)</SourceLine>
+    <SourceLine>controle=lenB(data)</SourceLine>
+    <SourceLine>writetofile.write format(controle,"00000000")</SourceLine>
+    <SourceLine>writetofile.write data</SourceLine>
+    <SourceLine>wend</SourceLine>
+    <SourceLine>readfromfile.close</SourceLine>
+    <SourceLine>writetofile.close</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>120</ObjSize>
+  <Superclass>PushButton</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Action</ItemName>
+   <ItemSource>
+    <StartSelRow>8</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>8</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Action()</SourceLine>
+    <SourceLine>dim compactado,descompactado as folderItem</SourceLine>
+    <SourceLine>dim readfromfile,writetofile as binaryStream</SourceLine>
+    <SourceLine>dim readresource as resstream</SourceLine>
+    <SourceLine>dim res as resourceFork</SourceLine>
+    <SourceLine>dim name as string</SourceLine>
+    <SourceLine>dim i,fileflags as integer</SourceLine>
+    <SourceLine>dim parametros,macc,mact,data,os as string</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>compactado=getopenFolderItem("allfiles")</SourceLine>
+    <SourceLine>if compactado&lt;&gt;nil then</SourceLine>
+    <SourceLine>readfromfile=compactado.openasbinaryFile(false)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>data=readfromfile.read(4)</SourceLine>
+    <SourceLine>i=val(data)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>parametros=readfromfile.read(i)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>name=nthField(parametros,chr(9),1)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>os=nthField(parametros,chr(9),countfields(parametros,chr(9)))</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>macc=nthField(parametros,chr(9),2)</SourceLine>
+    <SourceLine>macc=nthField(macc,"=",2)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>mact=nthField(parametros,chr(9),3)</SourceLine>
+    <SourceLine>mact=nthField(mact,"=",2)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>descompactado=getfolderItem(name)</SourceLine>
+    <SourceLine>writetofile=descompactado.createbinaryFile("allfiles")</SourceLine>
+    <SourceLine>if os="mac" then</SourceLine>
+    <SourceLine>res=descompactado.createResourceFork("allfiles")</SourceLine>
+    <SourceLine>res.close</SourceLine>
+    <SourceLine>data=readfromfile.read(8)</SourceLine>
+    <SourceLine>fileflags=val(data)</SourceLine>
+    <SourceLine>data=readfromfile.read(8)</SourceLine>
+    <SourceLine>i=val(data)</SourceLine>
+    <SourceLine>data=readfromfile.read(i)</SourceLine>
+    <SourceLine>data=uncompress(data,1048576)</SourceLine>
+    <SourceLine>readresource=descompactado.openasResStream(true)</SourceLine>
+    <SourceLine>readresource.write data</SourceLine>
+    <SourceLine>readresource.close</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>while not readfromfile.eof</SourceLine>
+    <SourceLine>data=readfromfile.read(8)</SourceLine>
+    <SourceLine>i=val(data)</SourceLine>
+    <SourceLine>data=readfromfile.read(i)</SourceLine>
+    <SourceLine>data=uncompress(data,1048576)</SourceLine>
+    <SourceLine>writetofile.write data</SourceLine>
+    <SourceLine>wend</SourceLine>
+    <SourceLine>readfromfile.close</SourceLine>
+    <SourceLine>writetofile.close</SourceLine>
+    <SourceLine>if os="mac" then</SourceLine>
+    <SourceLine>i=descompactado.setFileFlags(fileflags)</SourceLine>
+    <SourceLine>descompactado.maccreator=macc</SourceLine>
+    <SourceLine>descompactado.mactype=mact</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <Control>
+  <ControlClass>PushButton</ControlClass>
+  <ItemName>PushButton</ItemName>
+  <PropertyVal Name="Name">PushButton1</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">20</PropertyVal>
+  <PropertyVal Name="Top">14</PropertyVal>
+  <PropertyVal Name="Width">97</PropertyVal>
+  <PropertyVal Name="Height">20</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">12</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="Caption">Compactar</PropertyVal>
+  <PropertyVal Name="Default">False</PropertyVal>
+  <PropertyVal Name="Cancel">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <ControlIndex>0</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>PushButton</ControlClass>
+  <ItemName>PushButton</ItemName>
+  <PropertyVal Name="Name">PushButton2</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">20</PropertyVal>
+  <PropertyVal Name="Top">46</PropertyVal>
+  <PropertyVal Name="Width">113</PropertyVal>
+  <PropertyVal Name="Height">20</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">12</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="Caption">Descompactar</PropertyVal>
+  <PropertyVal Name="Default">False</PropertyVal>
+  <PropertyVal Name="Cancel">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <ControlIndex>1</ControlIndex>
+ </Control>
+</block>
+</RBProject>

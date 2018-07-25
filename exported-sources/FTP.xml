@@ -1,0 +1,1687 @@
+<?xml version="1.0"?>
+<RBProject version="5.5.3">
+<block type="Window" ID="-1180273970">
+ <ObjName>FTP</ObjName>
+ <ObjContainerID>-1184508641</ObjContainerID>
+ <EditBounds><Rect left="49" top="46" width="861" height="559"/></EditBounds>
+ <EditSplit>181</EditSplit>
+ <BrowserPositionGroup>
+  <BrowserPositionElement>
+   <ScreenKey>100001616</ScreenKey>
+   <EditBounds><Rect left="49" top="46" width="861" height="559"/></EditBounds>
+   <EditSplit>181</EditSplit>
+  </BrowserPositionElement>
+  <BrowserPositionElement>
+   <ScreenKey>100000721</ScreenKey>
+   <EditBounds><Rect left="49" top="46" width="861" height="559"/></EditBounds>
+   <EditSplit>181</EditSplit>
+  </BrowserPositionElement>
+ </BrowserPositionGroup>
+ <LastPositionH>492</LastPositionH>
+ <LastPositionV>88</LastPositionV>
+ <PropertyVal Name="Name">FTP</PropertyVal>
+ <PropertyVal Name="Frame">0</PropertyVal>
+ <PropertyVal Name="Composite">False</PropertyVal>
+ <PropertyVal Name="HasBackColor">True</PropertyVal>
+ <PropertyVal Name="BackColor">16777215</PropertyVal>
+ <PropertyVal Name="Backdrop">0</PropertyVal>
+ <PropertyVal Name="Title">Octopus FTP</PropertyVal>
+ <PropertyVal Name="Visible">True</PropertyVal>
+ <PropertyVal Name="FullScreen">False</PropertyVal>
+ <PropertyVal Name="MenuBarVisible">True</PropertyVal>
+ <PropertyVal Name="CloseBox">True</PropertyVal>
+ <PropertyVal Name="GrowIcon">True</PropertyVal>
+ <PropertyVal Name="LiveResize">False</PropertyVal>
+ <PropertyVal Name="ZoomIcon">True</PropertyVal>
+ <PropertyVal Name="BalloonHelp"></PropertyVal>
+ <PropertyVal Name="MacProcID">0</PropertyVal>
+ <PropertyVal Name="MenuBar">0</PropertyVal>
+ <PropertyVal Name="Placement">0</PropertyVal>
+ <PropertyVal Name="Width">648</PropertyVal>
+ <PropertyVal Name="Height">374</PropertyVal>
+ <PropertyVal Name="MinWidth">489</PropertyVal>
+ <PropertyVal Name="MinHeight">285</PropertyVal>
+ <PropertyVal Name="MaxWidth">1024</PropertyVal>
+ <PropertyVal Name="MaxHeight">768</PropertyVal>
+ <FormDefn>
+  <ObjName>FTP</ObjName>
+  <ObjSize>128</ObjSize>
+  <Superclass>Window</Superclass>
+  <IsInterface>0</IsInterface>
+  <Property Flags="1">zip as octcompress</Property>
+ </FormDefn>
+ <Property Flags="1">zip as octcompress</Property>
+ <Method>
+  <TextEncoding>1280</TextEncoding>
+  <ItemName>comparaarquivos</ItemName>
+  <ItemParams>path as string</ItemParams>
+  <ItemResult>boolean</ItemResult>
+  <ItemFlags>0</ItemFlags>
+  <ItemSource>
+   <StartSelRow>3</StartSelRow>
+   <StartSelCol>3</StartSelCol>
+   <EndSelRow>3</EndSelRow>
+   <EndSelCol>16</EndSelCol>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function comparaarquivos(path as string) As boolean</SourceLine>
+   <SourceLine>dim i as integer</SourceLine>
+   <SourceLine>for i=0 to listbox1.listcount-1</SourceLine>
+   <SourceLine>if listbox1.cell(i,6)=path then</SourceLine>
+   <SourceLine>return false</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine>return true</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+ </Method>
+ <Method>
+  <TextEncoding>1280</TextEncoding>
+  <ItemName>addfoldertodb</ItemName>
+  <ItemParams>pasta as folderItem</ItemParams>
+  <ItemResult></ItemResult>
+  <ItemFlags>0</ItemFlags>
+  <ItemSource>
+   <StartSelRow>4</StartSelRow>
+   <StartSelCol>0</StartSelCol>
+   <EndSelRow>8</EndSelRow>
+   <EndSelCol>20</EndSelCol>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub addfoldertodb(pasta as folderItem)</SourceLine>
+   <SourceLine>dim i as integer</SourceLine>
+   <SourceLine>dim fd as folderItem</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i=1 to pasta.Count</SourceLine>
+   <SourceLine>fd=pasta.TrueItem(i)</SourceLine>
+   <SourceLine>if fd.isreadable then</SourceLine>
+   <SourceLine>if fd.Visible then</SourceLine>
+   <SourceLine>if fd.directory then</SourceLine>
+   <SourceLine>addfoldertodb(fd)</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>addfiletodb(fd)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+ </Method>
+ <Method>
+  <TextEncoding>1280</TextEncoding>
+  <ItemName>cancelaos</ItemName>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+  <ItemFlags>0</ItemFlags>
+  <ItemSource>
+   <StartSelRow>1</StartSelRow>
+   <StartSelCol>0</StartSelCol>
+   <EndSelRow>1</EndSelRow>
+   <EndSelCol>0</EndSelCol>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub cancelaos()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+ </Method>
+ <HookInstance>
+  <TextEncoding>1280</TextEncoding>
+  <ItemName>Open</ItemName>
+  <ItemSource>
+   <StartSelRow>1</StartSelRow>
+   <StartSelCol>0</StartSelCol>
+   <EndSelRow>1</EndSelRow>
+   <EndSelCol>0</EndSelCol>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Open()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+ </HookInstance>
+ <HookInstance>
+  <TextEncoding>1280</TextEncoding>
+  <ItemName>EnableMenuItems</ItemName>
+  <ItemSource>
+   <StartSelRow>1</StartSelRow>
+   <StartSelCol>23</StartSelCol>
+   <EndSelRow>1</EndSelRow>
+   <EndSelCol>23</EndSelCol>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub EnableMenuItems()</SourceLine>
+   <SourceLine>arquivocancelaos.enable</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+ </HookInstance>
+ <MenuHandler>
+  <TextEncoding>1280</TextEncoding>
+  <ItemName>arquivocancelaos</ItemName>
+  <ItemSource>
+   <StartSelRow>12</StartSelRow>
+   <StartSelCol>16</StartSelCol>
+   <EndSelRow>12</EndSelRow>
+   <EndSelCol>20</EndSelCol>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Action As Boolean</SourceLine>
+   <SourceLine>sim=false</SourceLine>
+   <SourceLine>alerta="Deseja cancelar o envio de arquivos para a OS# "+os+" ?"</SourceLine>
+   <SourceLine>winalerta.showmodal</SourceLine>
+   <SourceLine>if sim = true then</SourceLine>
+   <SourceLine>if comsock&lt;&gt;nil then</SourceLine>
+   <SourceLine>if comsock.isConnected then</SourceLine>
+   <SourceLine>comsock.write "QUIT"+chr(10)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>csocket=new cancelsocket</SourceLine>
+   <SourceLine>csocket.port=21</SourceLine>
+   <SourceLine>csocket.address=host</SourceLine>
+   <SourceLine>csocket.connect</SourceLine>
+   <SourceLine>ftp.hide</SourceLine>
+   <SourceLine>wincancelamento.show</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+ </MenuHandler>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>128</ObjSize>
+  <Superclass>TabPanel</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Change</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Change()</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>120</ObjSize>
+  <Superclass>PushButton</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Action</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>29</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>29</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Action()</SourceLine>
+    <SourceLine>if me.caption="Conectar" then</SourceLine>
+    <SourceLine>connecttoserver</SourceLine>
+    <SourceLine>else</SourceLine>
+    <SourceLine>comsock.write "QUIT"+chr(10)</SourceLine>
+    <SourceLine>me.caption="Conectar"</SourceLine>
+    <SourceLine>me.default=true</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>100</ObjSize>
+  <Superclass>Separator</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>236</ObjSize>
+  <Superclass>BevelButton</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Action</ItemName>
+   <ItemSource>
+    <StartSelRow>7</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>7</EndSelRow>
+    <EndSelCol>13</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Action()</SourceLine>
+    <SourceLine>stop=true</SourceLine>
+    <SourceLine>if datasock&lt;&gt;nil then</SourceLine>
+    <SourceLine>if datasock.isConnected then</SourceLine>
+    <SourceLine>timer1.mode=0</SourceLine>
+    <SourceLine>timer2.mode=0</SourceLine>
+    <SourceLine>progressBar1.value=0</SourceLine>
+    <SourceLine>listbox1.cell(0,2)="Esperando..."</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>if chasingArrows1.visible=true then</SourceLine>
+    <SourceLine>chasingArrows1.visible=false</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>236</ObjSize>
+  <Superclass>BevelButton</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Action</ItemName>
+   <ItemSource>
+    <StartSelRow>25</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>25</EndSelRow>
+    <EndSelCol>9</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Action()</SourceLine>
+    <SourceLine>dim fd as folderItem</SourceLine>
+    <SourceLine>dim i as integer</SourceLine>
+    <SourceLine>if localhasfocus=true then</SourceLine>
+    <SourceLine>For i=0 to listbox1.Listcount-1</SourceLine>
+    <SourceLine>if listbox1.selected(i) then</SourceLine>
+    <SourceLine>if listbox1.cell(i,3)="yes" then</SourceLine>
+    <SourceLine>fd=getfolderItem(listbox1.cell(i,6))</SourceLine>
+    <SourceLine>removefromdb(i)</SourceLine>
+    <SourceLine>if fd.maccreator="OCTO" and fd.mactype="OCT!" then</SourceLine>
+    <SourceLine>fd.delete</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>elseif listbox1.cell(i,3)="no" then</SourceLine>
+    <SourceLine>fd=getfolderItem(listbox1.cell(i,6))</SourceLine>
+    <SourceLine>removefromdb(i)</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>listbox1.removeRow i</SourceLine>
+    <SourceLine>i=-1</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>next</SourceLine>
+    <SourceLine>refreshqueue</SourceLine>
+    <SourceLine>elseif remotehasfocus=true then</SourceLine>
+    <SourceLine>For i=0 to listBox2.listcount-1</SourceLine>
+    <SourceLine>if listBox2.selected(i) then</SourceLine>
+    <SourceLine>alerta="Deseja remover o arquivo "+ftp.listbox2.cell(i,0)+" do servidor remoto?"</SourceLine>
+    <SourceLine>winalerta.showmodal</SourceLine>
+    <SourceLine>if sim then</SourceLine>
+    <SourceLine>comsock.write "DELE "+listBox2.cell(i,0)+chr(10)</SourceLine>
+    <SourceLine>ftpdb.SQLExecute("delete from files where name='"+ftp.listbox2.cell(i,0)+"'")</SourceLine>
+    <SourceLine>ftpdb.close</SourceLine>
+    <SourceLine>listBox2.removerow i</SourceLine>
+    <SourceLine>i=-1</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>next</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>me.enabled=false</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>236</ObjSize>
+  <Superclass>BevelButton</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Action</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>22</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>22</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Action()</SourceLine>
+    <SourceLine>wincon.showWithin self</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>128</ObjSize>
+  <Superclass>StaticText</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>440</ObjSize>
+  <Superclass>Listbox</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>CellBackgroundPaint</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>12</EndSelRow>
+    <EndSelCol>1</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Function CellBackgroundPaint(g As Graphics, row As Integer, column As Integer) As Boolean</SourceLine>
+    <SourceLine>if (row mod 2)=0 then</SourceLine>
+    <SourceLine>g.foreColor=rgb(232,235,255)</SourceLine>
+    <SourceLine>g.fillrect 0,0,g.Width,g.height</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>if me.selected(row) then</SourceLine>
+    <SourceLine>g.foreColor = rgb(66,82,255)</SourceLine>
+    <SourceLine>g.fillrect 0,0,g.Width,g.height</SourceLine>
+    <SourceLine>g.foreColor=rgb(255,255,255)</SourceLine>
+    <SourceLine>else</SourceLine>
+    <SourceLine>g.foreColor=rgb(0,0,0)</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>//g.drawstring me.cell(me.lastIndex,1),0,0</SourceLine>
+    <SourceLine>End Function</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>ExpandRow</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub ExpandRow(row As Integer)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>DragRow</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Function DragRow(drag As DragItem, row As Integer) As Boolean</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Function</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>LostFocus</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>5</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>5</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub LostFocus()</SourceLine>
+    <SourceLine>localhasfocus=false</SourceLine>
+    <SourceLine>delbutton.enabled=false</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>CellClick</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>5</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>5</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Function CellClick(row as Integer, column as Integer, x as Integer, y as Integer) As Boolean</SourceLine>
+    <SourceLine>localhasfocus=true</SourceLine>
+    <SourceLine>delbutton.enabled=true</SourceLine>
+    <SourceLine>End Function</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>MouseDown</ItemName>
+   <ItemSource>
+    <StartSelRow>3</StartSelRow>
+    <StartSelCol>6</StartSelCol>
+    <EndSelRow>3</EndSelRow>
+    <EndSelCol>6</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Function MouseDown(x As Integer, y As Integer) As Boolean</SourceLine>
+    <SourceLine>if y&lt;21 then</SourceLine>
+    <SourceLine>return true</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>End Function</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>KeyDown</ItemName>
+   <ItemSource>
+    <StartSelRow>11</StartSelRow>
+    <StartSelCol>21</StartSelCol>
+    <EndSelRow>11</EndSelRow>
+    <EndSelCol>34</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Function KeyDown(key As String) As Boolean</SourceLine>
+    <SourceLine>dim i as integer</SourceLine>
+    <SourceLine>dim fd as folderItem</SourceLine>
+    <SourceLine>if key=chr(8) or key=chr(127) then</SourceLine>
+    <SourceLine>For i=0 to ftp.listbox1.Listcount-1</SourceLine>
+    <SourceLine>if ftp.listbox1.selected(i) then</SourceLine>
+    <SourceLine>if ftp.listbox1.cell(i,3)="yes" then</SourceLine>
+    <SourceLine>fd=getfolderItem(ftp.listbox1.cell(i,6))</SourceLine>
+    <SourceLine>removefromDB(i)</SourceLine>
+    <SourceLine>fd.delete</SourceLine>
+    <SourceLine>elseif ftp.listbox1.cell(i,3)="no" then</SourceLine>
+    <SourceLine>fd=getfolderItem(ftp.listbox1.cell(i,6))</SourceLine>
+    <SourceLine>removefromDB(i)</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>ftp.listbox1.removeRow i</SourceLine>
+    <SourceLine>i=-1</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>next</SourceLine>
+    <SourceLine>refreshqueue</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>End Function</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Open</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Open()</SourceLine>
+    <SourceLine>me.acceptfileDrop("allfiles")</SourceLine>
+    <SourceLine>'me.Column(0).UserResizable =true</SourceLine>
+    <SourceLine>'me.Column(1).UserResizable =true</SourceLine>
+    <SourceLine>'me.Column(2).UserResizable =true</SourceLine>
+    <SourceLine>'me.Column(3).UserResizable =true</SourceLine>
+    <SourceLine>'me.Column(4).UserResizable =true</SourceLine>
+    <SourceLine>me.columnAlignment(1)=2</SourceLine>
+    <SourceLine>me.columnAlignment(2)=2</SourceLine>
+    <SourceLine>me.columnAlignment(3)=2</SourceLine>
+    <SourceLine>me.columnAlignment(4)=2</SourceLine>
+    <SourceLine>me.columnAlignment(5)=3</SourceLine>
+    <SourceLine>me.ScrollBarVertical=true</SourceLine>
+    <SourceLine>refreshqueue</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>DropObject</ItemName>
+   <ItemSource>
+    <StartSelRow>14</StartSelRow>
+    <StartSelCol>4</StartSelCol>
+    <EndSelRow>14</EndSelRow>
+    <EndSelCol>4</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub DropObject(obj As DragItem)</SourceLine>
+    <SourceLine>dim cod as string</SourceLine>
+    <SourceLine>dim last as integer</SourceLine>
+    <SourceLine>dim fd as folderItem</SourceLine>
+    <SourceLine>dim pasta as string</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>Do</SourceLine>
+    <SourceLine>If Obj.FolderItemAvailable then</SourceLine>
+    <SourceLine>fd=obj.folderItem</SourceLine>
+    <SourceLine>cod=right(fd.name,3)</SourceLine>
+    <SourceLine>if comparaarquivos(fd.absolutePath) then</SourceLine>
+    <SourceLine>if fd.Alias=false and fd.isreadable=true then</SourceLine>
+    <SourceLine>if cod="zip" or cod="sit" or cod="oct" or cod="rar" then</SourceLine>
+    <SourceLine>addcompressedfiletodb(fd)</SourceLine>
+    <SourceLine>else</SourceLine>
+    <SourceLine>addfiletodb(fd)</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>else</SourceLine>
+    <SourceLine><Hex bytes="72">6D7367426F7820224F206172717569766F20222B66642E6E616D652B22206AE280A120657374E280A1206167656E6461646F2E22202020202F2F203C2D2D20434F4E564552544544</Hex></SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>Loop until Not obj.NextItem</SourceLine>
+    <SourceLine>refreshqueue</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Change</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Change()</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>108</ObjSize>
+  <Superclass>ChasingArrows</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>120</ObjSize>
+  <Superclass>PushButton</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Action</ItemName>
+   <ItemSource>
+    <StartSelRow>5</StartSelRow>
+    <StartSelCol>3</StartSelCol>
+    <EndSelRow>5</EndSelRow>
+    <EndSelCol>16</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Action()</SourceLine>
+    <SourceLine>dim no as boolean</SourceLine>
+    <SourceLine>dim i as integer</SourceLine>
+    <SourceLine>stop=false</SourceLine>
+    <SourceLine>for i=0 to listbox1.listcount-1</SourceLine>
+    <SourceLine>if listbox1.cell(i,3)="no" then</SourceLine>
+    <SourceLine>no=true</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>next</SourceLine>
+    <SourceLine>if no=true then</SourceLine>
+    <SourceLine>wincomp.show</SourceLine>
+    <SourceLine>zip=new OCTcompress</SourceLine>
+    <SourceLine>zip.run</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>100</ObjSize>
+  <Superclass>ProgressBar</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>120</ObjSize>
+  <Superclass>PushButton</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Action</ItemName>
+   <ItemSource>
+    <StartSelRow>11</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>11</EndSelRow>
+    <EndSelCol>6</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Action()</SourceLine>
+    <SourceLine>dim yes as boolean</SourceLine>
+    <SourceLine>dim i as integer</SourceLine>
+    <SourceLine>for i=0 to listbox1.listcount-1</SourceLine>
+    <SourceLine>if listbox1.cell(i,3)="no" then</SourceLine>
+    <SourceLine>yes=true</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>next</SourceLine>
+    <SourceLine>if yes=false then</SourceLine>
+    <SourceLine>settransfer</SourceLine>
+    <SourceLine>else</SourceLine>
+    <SourceLine>MsgBox "Os arquivos devem estar compactados para o envio."</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>stop=false</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>140</ObjSize>
+  <Superclass>CheckBox</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>440</ObjSize>
+  <Superclass>Listbox</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>CellBackgroundPaint</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Function CellBackgroundPaint(g As Graphics, row As Integer, column As Integer) As Boolean</SourceLine>
+    <SourceLine>if (row mod 2)=0 then</SourceLine>
+    <SourceLine>g.foreColor=rgb(232,235,255)</SourceLine>
+    <SourceLine>g.fillrect 0,0,g.Width,g.height</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>if me.selected(row) then</SourceLine>
+    <SourceLine>g.foreColor = rgb(66,82,255)</SourceLine>
+    <SourceLine>g.fillrect 0,0,g.Width,g.height</SourceLine>
+    <SourceLine>g.foreColor=rgb(255,255,255)</SourceLine>
+    <SourceLine>else</SourceLine>
+    <SourceLine>g.foreColor=rgb(0,0,0)</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>//g.drawstring me.cell(me.lastIndex,1),0,0</SourceLine>
+    <SourceLine>End Function</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>KeyDown</ItemName>
+   <ItemSource>
+    <StartSelRow>8</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>9</EndSelRow>
+    <EndSelCol>19</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Function KeyDown(key As String) As Boolean</SourceLine>
+    <SourceLine>dim i as integer</SourceLine>
+    <SourceLine>dim fd as folderItem</SourceLine>
+    <SourceLine>if key=chr(8) or key=chr(127) then</SourceLine>
+    <SourceLine>if comsock&lt;&gt;nil then</SourceLine>
+    <SourceLine>if comsock.isConnected then</SourceLine>
+    <SourceLine>For i=0 to ftp.listbox2.Listcount-1</SourceLine>
+    <SourceLine>if ftp.listbox2.selected(i) then</SourceLine>
+    <SourceLine>alerta="Deseja remover o arquivo "+ftp.listbox2.cell(i,0)+" do servidor remoto?"</SourceLine>
+    <SourceLine>winalerta.showmodal</SourceLine>
+    <SourceLine>if sim then</SourceLine>
+    <SourceLine>comsock.write "DELE "+ftp.listbox2.cell(i,0)+chr(10)</SourceLine>
+    <SourceLine>ftpdb.SQLExecute("delete from files where name='"+ftp.listbox2.cell(i,0)+"'")</SourceLine>
+    <SourceLine>ftpdb.close</SourceLine>
+    <SourceLine>ftp.listbox2.removeRow i</SourceLine>
+    <SourceLine>i=-1</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>next</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>End Function</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Open</ItemName>
+   <ItemSource>
+    <StartSelRow>3</StartSelRow>
+    <StartSelCol>23</StartSelCol>
+    <EndSelRow>3</EndSelRow>
+    <EndSelCol>23</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Open()</SourceLine>
+    <SourceLine>me.scrollbarvertical=true</SourceLine>
+    <SourceLine>me.column(0).UserResizable=true</SourceLine>
+    <SourceLine>me.ColumnAlignment(1)=3</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>LostFocus</ItemName>
+   <ItemSource>
+    <StartSelRow>2</StartSelRow>
+    <StartSelCol>9</StartSelCol>
+    <EndSelRow>2</EndSelRow>
+    <EndSelCol>9</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub LostFocus()</SourceLine>
+    <SourceLine>remotehasfocus=false</SourceLine>
+    <SourceLine>delbutton.enabled=false</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>CellClick</ItemName>
+   <ItemSource>
+    <StartSelRow>2</StartSelRow>
+    <StartSelCol>9</StartSelCol>
+    <EndSelRow>2</EndSelRow>
+    <EndSelCol>9</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Function CellClick(row as Integer, column as Integer, x as Integer, y as Integer) As Boolean</SourceLine>
+    <SourceLine>remotehasfocus=true</SourceLine>
+    <SourceLine>delbutton.enabled=true</SourceLine>
+    <SourceLine>End Function</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Change</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Change()</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>52</ObjSize>
+  <Superclass>Timer</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Action</ItemName>
+   <ItemSource>
+    <StartSelRow>4</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>4</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Action()</SourceLine>
+    <SourceLine>dim now as date</SourceLine>
+    <SourceLine>dim lixo as string</SourceLine>
+    <SourceLine>now = new date</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>if txtvelocidade.visible=false then</SourceLine>
+    <SourceLine>txtvelocidade.visible=true</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>if comsock.append=false then</SourceLine>
+    <SourceLine>datasock.bps = datasock.FileSent/(now.totalSeconds - clock.totalSeconds)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>lixo=format((datasock.bps/1000),"###.###\ \K\B\/\s")</SourceLine>
+    <SourceLine>txtvelocidade.text="Velocidade:    "+lixo</SourceLine>
+    <SourceLine>else</SourceLine>
+    <SourceLine>datasock.bps = remotefilesize/(now.totalSeconds - clock.totalSeconds)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>txtvelocidade.text="Velocidade:    "+format(datasock.bps/1000,"###.###\ \K\B\/\s")</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>52</ObjSize>
+  <Superclass>Timer</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Action</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>15</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>15</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Action()</SourceLine>
+    <SourceLine>connecttoserver</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>128</ObjSize>
+  <Superclass>StaticText</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>128</ObjSize>
+  <Superclass>StaticText</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Open</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Open()</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>108</ObjSize>
+  <Superclass>Canvas</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>108</ObjSize>
+  <Superclass>Canvas</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>108</ObjSize>
+  <Superclass>Canvas</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>108</ObjSize>
+  <Superclass>Canvas</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>108</ObjSize>
+  <Superclass>Canvas</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>108</ObjSize>
+  <Superclass>Canvas</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>108</ObjSize>
+  <Superclass>Canvas</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>108</ObjSize>
+  <Superclass>Canvas</Superclass>
+  <IsInterface>0</IsInterface>
+ </ControlBehavior>
+ <Control>
+  <ControlClass>TabPanel</ControlClass>
+  <ItemName>TabPanel</ItemName>
+  <PropertyVal Name="Name">TabPanel1</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">34</PropertyVal>
+  <PropertyVal Name="Top">70</PropertyVal>
+  <PropertyVal Name="Width">578</PropertyVal>
+  <PropertyVal Name="Height">206</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">12</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="Value">1</PropertyVal>
+  <PropertyVal Name="PanelCount">2</PropertyVal>
+  <PropertyVal Name="TabDefinition"><Hex bytes="33">46696C61206465204172717569766F730D4172717569766F732052656D6F746F73</Hex></PropertyVal>
+  <PropertyVal Name="Facing">0</PropertyVal>
+  <PropertyVal Name="SmallTabs">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <ControlIndex>0</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>PushButton</ControlClass>
+  <ItemName>PushButton</ItemName>
+  <PropertyVal Name="Name">connectbutton</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">42</PropertyVal>
+  <PropertyVal Name="Top">38</PropertyVal>
+  <PropertyVal Name="Width">102</PropertyVal>
+  <PropertyVal Name="Height">20</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag">Conectar ao Servidor</PropertyVal>
+  <PropertyVal Name="BalloonHelp">Conectar ao Servidor</PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">12</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="Caption">Conectar</PropertyVal>
+  <PropertyVal Name="Default">True</PropertyVal>
+  <PropertyVal Name="Cancel">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <ControlIndex>1</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>Separator</ControlClass>
+  <ItemName>Separator</ItemName>
+  <PropertyVal Name="Name">Separator3</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">151</PropertyVal>
+  <PropertyVal Name="Top">35</PropertyVal>
+  <PropertyVal Name="Width">7</PropertyVal>
+  <PropertyVal Name="Height">23</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <ControlIndex>2</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>BevelButton</ControlClass>
+  <ItemName>BevelButton</ItemName>
+  <PropertyVal Name="Name">stopbutton</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">548</PropertyVal>
+  <PropertyVal Name="Top">32</PropertyVal>
+  <PropertyVal Name="Width">31</PropertyVal>
+  <PropertyVal Name="Height">29</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag">Interromper Processo</PropertyVal>
+  <PropertyVal Name="BalloonHelp">Interromper Processo</PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="Enabled">False</PropertyVal>
+  <PropertyVal Name="Caption"></PropertyVal>
+  <PropertyVal Name="CaptionAlign">3</PropertyVal>
+  <PropertyVal Name="CaptionPlacement">1</PropertyVal>
+  <PropertyVal Name="CaptionDelta">0</PropertyVal>
+  <PropertyVal Name="Icon">-1180204673</PropertyVal>
+  <PropertyVal Name="IconAlign">1</PropertyVal>
+  <PropertyVal Name="IconDX">0</PropertyVal>
+  <PropertyVal Name="IconDY">0</PropertyVal>
+  <PropertyVal Name="Bevel">0</PropertyVal>
+  <PropertyVal Name="HasMenu">0</PropertyVal>
+  <PropertyVal Name="Value">False</PropertyVal>
+  <PropertyVal Name="MenuValue">0</PropertyVal>
+  <PropertyVal Name="ButtonType">0</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">12</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <ControlIndex>3</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>BevelButton</ControlClass>
+  <ItemName>BevelButton</ItemName>
+  <PropertyVal Name="Name">delbutton</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">580</PropertyVal>
+  <PropertyVal Name="Top">32</PropertyVal>
+  <PropertyVal Name="Width">31</PropertyVal>
+  <PropertyVal Name="Height">29</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag">Remover Arquivos</PropertyVal>
+  <PropertyVal Name="BalloonHelp">Remover Arquivos</PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="Enabled">False</PropertyVal>
+  <PropertyVal Name="Caption"></PropertyVal>
+  <PropertyVal Name="CaptionAlign">3</PropertyVal>
+  <PropertyVal Name="CaptionPlacement">1</PropertyVal>
+  <PropertyVal Name="CaptionDelta">0</PropertyVal>
+  <PropertyVal Name="Icon">-1180204671</PropertyVal>
+  <PropertyVal Name="IconAlign">1</PropertyVal>
+  <PropertyVal Name="IconDX">0</PropertyVal>
+  <PropertyVal Name="IconDY">0</PropertyVal>
+  <PropertyVal Name="Bevel">0</PropertyVal>
+  <PropertyVal Name="HasMenu">0</PropertyVal>
+  <PropertyVal Name="Value">False</PropertyVal>
+  <PropertyVal Name="MenuValue">0</PropertyVal>
+  <PropertyVal Name="ButtonType">0</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">12</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <ControlIndex>4</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>BevelButton</ControlClass>
+  <ItemName>BevelButton</ItemName>
+  <PropertyVal Name="Name">confbutton</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">516</PropertyVal>
+  <PropertyVal Name="Top">32</PropertyVal>
+  <PropertyVal Name="Width">31</PropertyVal>
+  <PropertyVal Name="Height">29</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"><Hex bytes="29">436F6E666967757261C28DE280BA657320646120436F6E6578E280B96F</Hex></PropertyVal>
+  <PropertyVal Name="BalloonHelp"><Hex bytes="29">436F6E666967757261C28DE280BA657320646120436F6E6578E280B96F</Hex></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Caption"></PropertyVal>
+  <PropertyVal Name="CaptionAlign">3</PropertyVal>
+  <PropertyVal Name="CaptionPlacement">1</PropertyVal>
+  <PropertyVal Name="CaptionDelta">0</PropertyVal>
+  <PropertyVal Name="Icon">-1178563157</PropertyVal>
+  <PropertyVal Name="IconAlign">1</PropertyVal>
+  <PropertyVal Name="IconDX">0</PropertyVal>
+  <PropertyVal Name="IconDY">0</PropertyVal>
+  <PropertyVal Name="Bevel">0</PropertyVal>
+  <PropertyVal Name="HasMenu">0</PropertyVal>
+  <PropertyVal Name="Value">False</PropertyVal>
+  <PropertyVal Name="MenuValue">0</PropertyVal>
+  <PropertyVal Name="ButtonType">0</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">12</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <ControlIndex>5</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>StaticText</ControlClass>
+  <ItemName>StaticText</ItemName>
+  <PropertyVal Name="Name">StaticText1</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">170</PropertyVal>
+  <PropertyVal Name="Top">36</PropertyVal>
+  <PropertyVal Name="Width">251</PropertyVal>
+  <PropertyVal Name="Height">23</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">12</PropertyVal>
+  <PropertyVal Name="Bold">True</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="Text">Octopus Ftp Client  v.1.0</PropertyVal>
+  <PropertyVal Name="TextAlign">0</PropertyVal>
+  <PropertyVal Name="TextColor">3437242</PropertyVal>
+  <PropertyVal Name="MultiLine">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="DataSource"></PropertyVal>
+  <PropertyVal Name="DataField"></PropertyVal>
+  <ControlIndex>6</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>ListBox</ControlClass>
+  <ItemName>ListBox</ItemName>
+  <PropertyVal Name="Name">listbox1</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">1</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">34</PropertyVal>
+  <PropertyVal Name="Top">100</PropertyVal>
+  <PropertyVal Name="Width">578</PropertyVal>
+  <PropertyVal Name="Height">176</PropertyVal>
+  <PropertyVal Name="InitialParent">TabPanel1</PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">12</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="ColumnCount">7</PropertyVal>
+  <PropertyVal Name="ColumnWidths">50%,*,*,0%,0%,0%,0%</PropertyVal>
+  <PropertyVal Name="HasHeading">True</PropertyVal>
+  <PropertyVal Name="UseFocusRing">False</PropertyVal>
+  <PropertyVal Name="InitialValue"><Hex bytes="47">4E6F6D650954616D616E686F0953746174757309436F6D70726573736564095265616C73697A650949440950617468</Hex></PropertyVal>
+  <PropertyVal Name="Hierarchical">False</PropertyVal>
+  <PropertyVal Name="EnableDrag">False</PropertyVal>
+  <PropertyVal Name="EnableDragReorder">False</PropertyVal>
+  <PropertyVal Name="SelectionType">1</PropertyVal>
+  <PropertyVal Name="HeadingIndex">-1</PropertyVal>
+  <PropertyVal Name="ScrollBarHorizontal">True</PropertyVal>
+  <PropertyVal Name="ScrollPositionX">0</PropertyVal>
+  <PropertyVal Name="ScrollBarVertical">True</PropertyVal>
+  <PropertyVal Name="ScrollPosition">0</PropertyVal>
+  <PropertyVal Name="DataSource"></PropertyVal>
+  <PropertyVal Name="DataField"></PropertyVal>
+  <PropertyVal Name="GridLinesHorizontal">1</PropertyVal>
+  <PropertyVal Name="GridLinesVertical">1</PropertyVal>
+  <PropertyVal Name="DefaultRowHeight">-1</PropertyVal>
+  <PropertyVal Name="ColumnsResizable">False</PropertyVal>
+  <ControlIndex>7</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>ChasingArrows</ControlClass>
+  <ItemName>ChasingArrows</ItemName>
+  <PropertyVal Name="Name">ChasingArrows1</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">False</PropertyVal>
+  <PropertyVal Name="Left">42</PropertyVal>
+  <PropertyVal Name="Top">321</PropertyVal>
+  <PropertyVal Name="Width">16</PropertyVal>
+  <PropertyVal Name="Height">16</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <ControlIndex>8</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>PushButton</ControlClass>
+  <ItemName>PushButton</ItemName>
+  <PropertyVal Name="Name">compress</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">67</PropertyVal>
+  <PropertyVal Name="Top">317</PropertyVal>
+  <PropertyVal Name="Width">109</PropertyVal>
+  <PropertyVal Name="Height">19</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">12</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="Caption">Compactar</PropertyVal>
+  <PropertyVal Name="Default">True</PropertyVal>
+  <PropertyVal Name="Cancel">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <ControlIndex>9</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>ProgressBar</ControlClass>
+  <ItemName>ProgressBar</ItemName>
+  <PropertyVal Name="Name">ProgressBar1</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">35</PropertyVal>
+  <PropertyVal Name="Top">283</PropertyVal>
+  <PropertyVal Name="Width">578</PropertyVal>
+  <PropertyVal Name="Height">12</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="Value">0</PropertyVal>
+  <PropertyVal Name="Maximum">100</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <ControlIndex>10</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>PushButton</ControlClass>
+  <ItemName>PushButton</ItemName>
+  <PropertyVal Name="Name">send</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">540</PropertyVal>
+  <PropertyVal Name="Top">317</PropertyVal>
+  <PropertyVal Name="Width">69</PropertyVal>
+  <PropertyVal Name="Height">19</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">12</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="Caption">Enviar</PropertyVal>
+  <PropertyVal Name="Default">False</PropertyVal>
+  <PropertyVal Name="Cancel">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <ControlIndex>11</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>CheckBox</ControlClass>
+  <ItemName>CheckBox</ItemName>
+  <PropertyVal Name="Name">CheckBox1</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">182</PropertyVal>
+  <PropertyVal Name="Top">318</PropertyVal>
+  <PropertyVal Name="Width">249</PropertyVal>
+  <PropertyVal Name="Height">19</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">10</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="Caption"><Hex bytes="44">496E6963696172205472616E73666572C2906E636961204170E280947320436F6D7061637461C28DE280B96F</Hex></PropertyVal>
+  <PropertyVal Name="Value">True</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="DataSource"></PropertyVal>
+  <PropertyVal Name="DataField"></PropertyVal>
+  <ControlIndex>12</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>ListBox</ControlClass>
+  <ItemName>ListBox</ItemName>
+  <PropertyVal Name="Name">ListBox2</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">2</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">34</PropertyVal>
+  <PropertyVal Name="Top">100</PropertyVal>
+  <PropertyVal Name="Width">578</PropertyVal>
+  <PropertyVal Name="Height">176</PropertyVal>
+  <PropertyVal Name="InitialParent">TabPanel1</PropertyVal>
+  <PropertyVal Name="HelpTag">Arquivos Armazenados no Servidor Remoto</PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">12</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="ColumnCount">3</PropertyVal>
+  <PropertyVal Name="ColumnWidths">80%,*,0%</PropertyVal>
+  <PropertyVal Name="HasHeading">True</PropertyVal>
+  <PropertyVal Name="UseFocusRing">True</PropertyVal>
+  <PropertyVal Name="InitialValue"><Hex bytes="6">4E6F6D650920</Hex></PropertyVal>
+  <PropertyVal Name="Hierarchical">False</PropertyVal>
+  <PropertyVal Name="EnableDrag">False</PropertyVal>
+  <PropertyVal Name="EnableDragReorder">False</PropertyVal>
+  <PropertyVal Name="SelectionType">1</PropertyVal>
+  <PropertyVal Name="HeadingIndex">-1</PropertyVal>
+  <PropertyVal Name="ScrollBarHorizontal">True</PropertyVal>
+  <PropertyVal Name="ScrollPositionX">0</PropertyVal>
+  <PropertyVal Name="ScrollBarVertical">True</PropertyVal>
+  <PropertyVal Name="ScrollPosition">0</PropertyVal>
+  <PropertyVal Name="DataSource"></PropertyVal>
+  <PropertyVal Name="DataField"></PropertyVal>
+  <PropertyVal Name="GridLinesHorizontal">1</PropertyVal>
+  <PropertyVal Name="GridLinesVertical">0</PropertyVal>
+  <PropertyVal Name="DefaultRowHeight">-1</PropertyVal>
+  <PropertyVal Name="ColumnsResizable">False</PropertyVal>
+  <ControlIndex>13</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>Timer</ControlClass>
+  <ItemName>Timer</ItemName>
+  <PropertyVal Name="Name">Timer1</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">1</PropertyVal>
+  <PropertyVal Name="Left">453</PropertyVal>
+  <PropertyVal Name="Top">172</PropertyVal>
+  <PropertyVal Name="Mode">0</PropertyVal>
+  <PropertyVal Name="Period">100</PropertyVal>
+  <ControlIndex>14</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>Timer</ControlClass>
+  <ItemName>Timer</ItemName>
+  <PropertyVal Name="Name">Timer2</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">1</PropertyVal>
+  <PropertyVal Name="Left">453</PropertyVal>
+  <PropertyVal Name="Top">128</PropertyVal>
+  <PropertyVal Name="Mode">0</PropertyVal>
+  <PropertyVal Name="Period">1000</PropertyVal>
+  <ControlIndex>15</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>StaticText</ControlClass>
+  <ItemName>StaticText</ItemName>
+  <PropertyVal Name="Name">txtprogresso</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">False</PropertyVal>
+  <PropertyVal Name="Left">42</PropertyVal>
+  <PropertyVal Name="Top">297</PropertyVal>
+  <PropertyVal Name="Width">217</PropertyVal>
+  <PropertyVal Name="Height">12</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">10</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="Text">Progresso:</PropertyVal>
+  <PropertyVal Name="TextAlign">0</PropertyVal>
+  <PropertyVal Name="TextColor">0</PropertyVal>
+  <PropertyVal Name="MultiLine">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="DataSource"></PropertyVal>
+  <PropertyVal Name="DataField"></PropertyVal>
+  <ControlIndex>16</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>StaticText</ControlClass>
+  <ItemName>StaticText</ItemName>
+  <PropertyVal Name="Name">txtvelocidade</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">False</PropertyVal>
+  <PropertyVal Name="Left">371</PropertyVal>
+  <PropertyVal Name="Top">297</PropertyVal>
+  <PropertyVal Name="Width">221</PropertyVal>
+  <PropertyVal Name="Height">16</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">10</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <PropertyVal Name="Text">Velocidade:</PropertyVal>
+  <PropertyVal Name="TextAlign">0</PropertyVal>
+  <PropertyVal Name="TextColor">0</PropertyVal>
+  <PropertyVal Name="MultiLine">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="DataSource"></PropertyVal>
+  <PropertyVal Name="DataField"></PropertyVal>
+  <ControlIndex>17</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>Canvas</ControlClass>
+  <ItemName>Canvas</ItemName>
+  <PropertyVal Name="Name">Canvas1</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">613</PropertyVal>
+  <PropertyVal Name="Top">26</PropertyVal>
+  <PropertyVal Name="Width">35</PropertyVal>
+  <PropertyVal Name="Height">317</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="Backdrop">-1178565662</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="UseFocusRing">True</PropertyVal>
+  <PropertyVal Name="AcceptFocus">False</PropertyVal>
+  <PropertyVal Name="AcceptTabs">False</PropertyVal>
+  <ControlIndex>18</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>Canvas</ControlClass>
+  <ItemName>Canvas</ItemName>
+  <PropertyVal Name="Name">Canvas2</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">613</PropertyVal>
+  <PropertyVal Name="Top">342</PropertyVal>
+  <PropertyVal Name="Width">35</PropertyVal>
+  <PropertyVal Name="Height">32</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="Backdrop">-1178565667</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="UseFocusRing">True</PropertyVal>
+  <PropertyVal Name="AcceptFocus">False</PropertyVal>
+  <PropertyVal Name="AcceptTabs">False</PropertyVal>
+  <ControlIndex>19</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>Canvas</ControlClass>
+  <ItemName>Canvas</ItemName>
+  <PropertyVal Name="Name">Canvas3</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">34</PropertyVal>
+  <PropertyVal Name="Top">342</PropertyVal>
+  <PropertyVal Name="Width">580</PropertyVal>
+  <PropertyVal Name="Height">32</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="Backdrop">-1178565663</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="UseFocusRing">True</PropertyVal>
+  <PropertyVal Name="AcceptFocus">False</PropertyVal>
+  <PropertyVal Name="AcceptTabs">False</PropertyVal>
+  <ControlIndex>20</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>Canvas</ControlClass>
+  <ItemName>Canvas</ItemName>
+  <PropertyVal Name="Name">Canvas4</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">0</PropertyVal>
+  <PropertyVal Name="Top">342</PropertyVal>
+  <PropertyVal Name="Width">35</PropertyVal>
+  <PropertyVal Name="Height">32</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="Backdrop">-1178565668</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="UseFocusRing">True</PropertyVal>
+  <PropertyVal Name="AcceptFocus">False</PropertyVal>
+  <PropertyVal Name="AcceptTabs">False</PropertyVal>
+  <ControlIndex>21</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>Canvas</ControlClass>
+  <ItemName>Canvas</ItemName>
+  <PropertyVal Name="Name">Canvas5</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">0</PropertyVal>
+  <PropertyVal Name="Top">26</PropertyVal>
+  <PropertyVal Name="Width">35</PropertyVal>
+  <PropertyVal Name="Height">317</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">True</PropertyVal>
+  <PropertyVal Name="Backdrop">-1178565664</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="UseFocusRing">True</PropertyVal>
+  <PropertyVal Name="AcceptFocus">False</PropertyVal>
+  <PropertyVal Name="AcceptTabs">False</PropertyVal>
+  <ControlIndex>22</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>Canvas</ControlClass>
+  <ItemName>Canvas</ItemName>
+  <PropertyVal Name="Name">Canvas6</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">0</PropertyVal>
+  <PropertyVal Name="Top">0</PropertyVal>
+  <PropertyVal Name="Width">35</PropertyVal>
+  <PropertyVal Name="Height">27</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="Backdrop">-1178565665</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="UseFocusRing">True</PropertyVal>
+  <PropertyVal Name="AcceptFocus">False</PropertyVal>
+  <PropertyVal Name="AcceptTabs">False</PropertyVal>
+  <ControlIndex>23</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>Canvas</ControlClass>
+  <ItemName>Canvas</ItemName>
+  <PropertyVal Name="Name">Canvas7</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">613</PropertyVal>
+  <PropertyVal Name="Top">0</PropertyVal>
+  <PropertyVal Name="Width">35</PropertyVal>
+  <PropertyVal Name="Height">27</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="Backdrop">-1178565666</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="UseFocusRing">True</PropertyVal>
+  <PropertyVal Name="AcceptFocus">False</PropertyVal>
+  <PropertyVal Name="AcceptTabs">False</PropertyVal>
+  <ControlIndex>24</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>Canvas</ControlClass>
+  <ItemName>Canvas</ItemName>
+  <PropertyVal Name="Name">Canvas8</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">34</PropertyVal>
+  <PropertyVal Name="Top">0</PropertyVal>
+  <PropertyVal Name="Width">580</PropertyVal>
+  <PropertyVal Name="Height">27</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">True</PropertyVal>
+  <PropertyVal Name="LockTop">True</PropertyVal>
+  <PropertyVal Name="LockRight">True</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="Backdrop">-1178565661</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="UseFocusRing">True</PropertyVal>
+  <PropertyVal Name="AcceptFocus">False</PropertyVal>
+  <PropertyVal Name="AcceptTabs">False</PropertyVal>
+  <ControlIndex>25</ControlIndex>
+ </Control>
+</block>
+</RBProject>

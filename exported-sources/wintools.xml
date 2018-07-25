@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+<RBProject version="5.5.3">
+<block type="Window" ID="-1182011246">
+ <ObjName>wintools</ObjName>
+ <ObjContainerID>-1176923031</ObjContainerID>
+ <EditBounds><Rect left="49" top="212" width="946" height="600"/></EditBounds>
+ <EditSplit>181</EditSplit>
+ <BrowserPositionGroup>
+  <BrowserPositionElement>
+   <ScreenKey>100001616</ScreenKey>
+   <EditBounds><Rect left="49" top="212" width="946" height="600"/></EditBounds>
+   <EditSplit>181</EditSplit>
+  </BrowserPositionElement>
+  <BrowserPositionElement>
+   <ScreenKey>100000721</ScreenKey>
+   <EditBounds><Rect left="49" top="212" width="946" height="600"/></EditBounds>
+   <EditSplit>181</EditSplit>
+  </BrowserPositionElement>
+ </BrowserPositionGroup>
+ <LastPositionH>144</LastPositionH>
+ <LastPositionV>98</LastPositionV>
+ <PropertyVal Name="Name">wintools</PropertyVal>
+ <PropertyVal Name="Frame">0</PropertyVal>
+ <PropertyVal Name="Composite">False</PropertyVal>
+ <PropertyVal Name="HasBackColor">False</PropertyVal>
+ <PropertyVal Name="BackColor">16777215</PropertyVal>
+ <PropertyVal Name="Backdrop">0</PropertyVal>
+ <PropertyVal Name="Title">Janeladooctopus</PropertyVal>
+ <PropertyVal Name="Visible">True</PropertyVal>
+ <PropertyVal Name="FullScreen">False</PropertyVal>
+ <PropertyVal Name="MenuBarVisible">True</PropertyVal>
+ <PropertyVal Name="CloseBox">True</PropertyVal>
+ <PropertyVal Name="GrowIcon">True</PropertyVal>
+ <PropertyVal Name="LiveResize">False</PropertyVal>
+ <PropertyVal Name="ZoomIcon">True</PropertyVal>
+ <PropertyVal Name="BalloonHelp"></PropertyVal>
+ <PropertyVal Name="MacProcID">0</PropertyVal>
+ <PropertyVal Name="MenuBar">-1182779461</PropertyVal>
+ <PropertyVal Name="Placement">0</PropertyVal>
+ <PropertyVal Name="Width">300</PropertyVal>
+ <PropertyVal Name="Height">300</PropertyVal>
+ <PropertyVal Name="MinWidth">64</PropertyVal>
+ <PropertyVal Name="MinHeight">64</PropertyVal>
+ <PropertyVal Name="MaxWidth">32000</PropertyVal>
+ <PropertyVal Name="MaxHeight">32000</PropertyVal>
+ <FormDefn>
+  <ObjName>wintools</ObjName>
+  <ObjSize>120</ObjSize>
+  <Superclass>Window</Superclass>
+  <IsInterface>0</IsInterface>
+ </FormDefn>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>36</ObjSize>
+  <Superclass>Socket</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Error</ItemName>
+   <ItemSource>
+    <StartSelRow>7</StartSelRow>
+    <StartSelCol>47</StartSelCol>
+    <EndSelRow>7</EndSelRow>
+    <EndSelCol>47</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Error()</SourceLine>
+    <SourceLine>select case me.lastErrorCode</SourceLine>
+    <SourceLine>case 101</SourceLine>
+    <SourceLine>conectando.close</SourceLine>
+    <SourceLine><Hex bytes="75">6D7367426F7820224F20757375E280A172696F206368616D61646F206EE280B96F20657374E280A120646973706F6EE2809976656C2E22202020202F2F203C2D2D20434F4E564552544544</Hex></SourceLine>
+    <SourceLine>case 103</SourceLine>
+    <SourceLine>conectando.close</SourceLine>
+    <SourceLine><Hex bytes="75">6D7367426F7820224F20757375E280A172696F206368616D61646F206EE280B96F20657374E280A120646973706F6EE2809976656C2E22202020202F2F203C2D2D20434F4E564552544544</Hex></SourceLine>
+    <SourceLine>else</SourceLine>
+    <SourceLine>msgBox str(me.lastErrorCode)</SourceLine>
+    <SourceLine>end select</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>DataAvailable</ItemName>
+   <ItemSource>
+    <StartSelRow>8</StartSelRow>
+    <StartSelCol>16</StartSelCol>
+    <EndSelRow>8</EndSelRow>
+    <EndSelCol>16</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub DataAvailable()</SourceLine>
+    <SourceLine>dim data,user as string</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>data=me.readall</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>user=nthField(data,chr(9),2)</SourceLine>
+    <SourceLine>data=nthField(data,chr(9),1)</SourceLine>
+    <SourceLine>conectando.close</SourceLine>
+    <SourceLine>if data="SIM" then</SourceLine>
+    <SourceLine>newchatsession(user,me.address,true)</SourceLine>
+    <SourceLine>elseif data="NAO" then</SourceLine>
+    <SourceLine>msgBox user+" recusou seu pedido."</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>me.close</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Connected</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>47</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>47</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Connected()</SourceLine>
+    <SourceLine>me.write me.localAddress+chr(9)+app.colaborador</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>36</ObjSize>
+  <Superclass>Socket</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Error</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Error()</SourceLine>
+    <SourceLine>me.listen</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>SendComplete</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub SendComplete(userAborted as Boolean)</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>DataAvailable</ItemName>
+   <ItemSource>
+    <StartSelRow>8</StartSelRow>
+    <StartSelCol>34</StartSelCol>
+    <EndSelRow>8</EndSelRow>
+    <EndSelCol>38</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub DataAvailable()</SourceLine>
+    <SourceLine>dim data,ip,user as string</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>data=me.readall</SourceLine>
+    <SourceLine>ip=nthField(data,chr(9),1)</SourceLine>
+    <SourceLine>user=nthField(data,chr(9),2)</SourceLine>
+    <SourceLine>chat_confirmacao.ip=ip</SourceLine>
+    <SourceLine>chat_confirmacao.user=user</SourceLine>
+    <SourceLine><Hex bytes="92">636861745F636F6E6669726D6163616F2E73746174696354657874312E746578743D757365722B222071756572207465636C617220636F6D20766F63C2902E204163656974613F22202020202F2F203C2D2D20434F4E564552544544</Hex></SourceLine>
+    <SourceLine>chat_confirmacao.visible=true</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Connected</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>0</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>0</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Connected()</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>52</ObjSize>
+  <Superclass>Timer</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Action</ItemName>
+   <ItemSource>
+    <StartSelRow>15</StartSelRow>
+    <StartSelCol>4</StartSelCol>
+    <EndSelRow>15</EndSelRow>
+    <EndSelCol>4</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Action()</SourceLine>
+    <SourceLine>dim r as recordSet</SourceLine>
+    <SourceLine>dim a as alerta</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>if not statusactive then</SourceLine>
+    <SourceLine>r=octopus.sQLSelect("select De,Data,_rowid,Nova from chat where CodEmpresa="+chr(34)+app.CodEmpresa+chr(34)+" and Usuario="+chr(34)+app.colaborador+chr(34))</SourceLine>
+    <SourceLine></SourceLine>
+    <SourceLine>if r&lt;&gt;nil then</SourceLine>
+    <SourceLine>if not r.eof then</SourceLine>
+    <SourceLine>while not r.eof </SourceLine>
+    <SourceLine>if r.field("Nova").getString="SIM" then</SourceLine>
+    <SourceLine>newmessage=true</SourceLine>
+    <SourceLine><Hex bytes="62">2F2F616C6572746D6573736167653D2248E280A1206D656E736167656D207061726120766F63C2902122202020202F2F203C2D2D20434F4E564552544544</Hex></SourceLine>
+    <SourceLine>//a=new alerta</SourceLine>
+    <SourceLine>//a.show</SourceLine>
+    <SourceLine>beep</SourceLine>
+    <SourceLine>r.movelast</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>r.movenext</SourceLine>
+    <SourceLine>wend</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>r.close</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>end if</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <ControlBehavior>
+  <ObjName></ObjName>
+  <ObjSize>236</ObjSize>
+  <Superclass>BevelButton</Superclass>
+  <IsInterface>0</IsInterface>
+  <HookInstance>
+   <TextEncoding>1280</TextEncoding>
+   <ItemName>Action</ItemName>
+   <ItemSource>
+    <StartSelRow>1</StartSelRow>
+    <StartSelCol>11</StartSelCol>
+    <EndSelRow>1</EndSelRow>
+    <EndSelCol>11</EndSelCol>
+    <TextEncoding>134217984</TextEncoding>
+    <SourceLine>Sub Action()</SourceLine>
+    <SourceLine>status.show</SourceLine>
+    <SourceLine>End Sub</SourceLine>
+   </ItemSource>
+  </HookInstance>
+ </ControlBehavior>
+ <Control>
+  <ControlClass>Socket</ControlClass>
+  <ItemName>Socket</ItemName>
+  <PropertyVal Name="Name">saidasdechat</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Left">49</PropertyVal>
+  <PropertyVal Name="Top">45</PropertyVal>
+  <PropertyVal Name="Address"></PropertyVal>
+  <PropertyVal Name="Port">44446</PropertyVal>
+  <ControlIndex>0</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>Socket</ControlClass>
+  <ItemName>Socket</ItemName>
+  <PropertyVal Name="Name">entradasdechat</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Left">56</PropertyVal>
+  <PropertyVal Name="Top">139</PropertyVal>
+  <PropertyVal Name="Address"></PropertyVal>
+  <PropertyVal Name="Port">44446</PropertyVal>
+  <ControlIndex>1</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>Timer</ControlClass>
+  <ItemName>Timer</ItemName>
+  <PropertyVal Name="Name">Timer1</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Left">94</PropertyVal>
+  <PropertyVal Name="Top">7</PropertyVal>
+  <PropertyVal Name="Mode">2</PropertyVal>
+  <PropertyVal Name="Period">15000</PropertyVal>
+  <ControlIndex>2</ControlIndex>
+ </Control>
+ <Control>
+  <ControlClass>BevelButton</ControlClass>
+  <ItemName>BevelButton</ItemName>
+  <PropertyVal Name="Name">BevelButton1</PropertyVal>
+  <PropertyVal Name="Index">-2147483648</PropertyVal>
+  <PropertyVal Name="TabPanelIndex">0</PropertyVal>
+  <PropertyVal Name="Visible">True</PropertyVal>
+  <PropertyVal Name="Left">49</PropertyVal>
+  <PropertyVal Name="Top">217</PropertyVal>
+  <PropertyVal Name="Width">191</PropertyVal>
+  <PropertyVal Name="Height">37</PropertyVal>
+  <PropertyVal Name="InitialParent"></PropertyVal>
+  <PropertyVal Name="HelpTag"></PropertyVal>
+  <PropertyVal Name="BalloonHelp"></PropertyVal>
+  <PropertyVal Name="DisabledBalloonHelp"></PropertyVal>
+  <PropertyVal Name="AutoDeactivate">True</PropertyVal>
+  <PropertyVal Name="LockLeft">False</PropertyVal>
+  <PropertyVal Name="LockTop">False</PropertyVal>
+  <PropertyVal Name="LockRight">False</PropertyVal>
+  <PropertyVal Name="LockBottom">False</PropertyVal>
+  <PropertyVal Name="Enabled">True</PropertyVal>
+  <PropertyVal Name="Caption">Octopus Messenger</PropertyVal>
+  <PropertyVal Name="CaptionAlign">3</PropertyVal>
+  <PropertyVal Name="CaptionPlacement">1</PropertyVal>
+  <PropertyVal Name="CaptionDelta">0</PropertyVal>
+  <PropertyVal Name="Icon">0</PropertyVal>
+  <PropertyVal Name="IconAlign">0</PropertyVal>
+  <PropertyVal Name="IconDX">0</PropertyVal>
+  <PropertyVal Name="IconDY">0</PropertyVal>
+  <PropertyVal Name="Bevel">0</PropertyVal>
+  <PropertyVal Name="HasMenu">0</PropertyVal>
+  <PropertyVal Name="Value">False</PropertyVal>
+  <PropertyVal Name="MenuValue">0</PropertyVal>
+  <PropertyVal Name="ButtonType">0</PropertyVal>
+  <PropertyVal Name="TextFont">System</PropertyVal>
+  <PropertyVal Name="TextSize">12</PropertyVal>
+  <PropertyVal Name="Bold">False</PropertyVal>
+  <PropertyVal Name="Italic">False</PropertyVal>
+  <PropertyVal Name="Underline">False</PropertyVal>
+  <ControlIndex>3</ControlIndex>
+ </Control>
+</block>
+</RBProject>
